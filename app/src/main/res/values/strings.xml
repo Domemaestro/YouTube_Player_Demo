@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">YouTube Player</string>
     <string name="youtube_player">YouTube Player</string>
+    <string name="NCS_Channel_Id">UC_aEa8K-EOJ3D6gOs7HcyNg</string>
+    <string name="youtubeAPI">AIzaSyAZ_ohITntw-5TQko1VbRiY5zp_lkkAUro</string>
 </resources>
