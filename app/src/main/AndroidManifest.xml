@@ -13,6 +13,11 @@
         android:theme="@style/Theme.YouTubePlayer"
         tools:targetApi="31">
         <activity
+            android:name=".FullScreen"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -26,22 +26,22 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
 
         VideoHolder = itemView.findViewById(R.id.youTubePlayerView);
-        VideoHolder.setEnableAutomaticInitialization(false);
-        VideoHolder.addFullscreenListener(new FullscreenListener() {
-            @Override
-            public void onEnterFullscreen(@NonNull View fullscreenView, @NonNull Function0<Unit> function0) {
-                VideoHolder.setVisibility(View.GONE);
-                FullscreenView.setVisibility(View.VISIBLE);
-                FullscreenView.addView(fullscreenView);
-            }
-
-            @Override
-            public void onExitFullscreen() {
-                VideoHolder.setVisibility(View.VISIBLE);
-                FullscreenView.setVisibility(View.GONE);
-                FullscreenView.removeAllViews();
-            }
-        });
+//        VideoHolder.setEnableAutomaticInitialization(false);
+//        VideoHolder.addFullscreenListener(new FullscreenListener() {
+//            @Override
+//            public void onEnterFullscreen(@NonNull View fullscreenView, @NonNull Function0<Unit> function0) {
+//                VideoHolder.setVisibility(View.GONE);
+//                FullscreenView.setVisibility(View.VISIBLE);
+//                FullscreenView.addView(fullscreenView);
+//            }
+//
+//            @Override
+//            public void onExitFullscreen() {
+//                VideoHolder.setVisibility(View.VISIBLE);
+//                FullscreenView.setVisibility(View.GONE);
+//                FullscreenView.removeAllViews();
+//            }
+//        });
 
 
         TitleHolder = itemView.findViewById(R.id.titleHolder);
