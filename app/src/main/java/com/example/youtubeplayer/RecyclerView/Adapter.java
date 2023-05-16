@@ -12,17 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.youtubeplayer.FullScreen;
 import com.example.youtubeplayer.Models.Items;
 import com.example.youtubeplayer.R;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.FullscreenListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerCallback;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
-
-import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
 
 public class Adapter extends RecyclerView.Adapter<MyViewHolder> {
 
@@ -33,6 +22,7 @@ public class Adapter extends RecyclerView.Adapter<MyViewHolder> {
 
     Context context;
     Items[] items;
+
 
 //    IFramePlayerOptions iFramePlayerOptions;
     @NonNull
@@ -48,14 +38,16 @@ public class Adapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Items videoId = items[position];
         holder.TitleHolder.setText(items[position]
                 .getSnippet()
                 .getTitle());
 
         holder.VideoHolder.getYouTubePlayerWhenReady(youTubePlayer -> youTubePlayer.cueVideo(items[holder.getAdapterPosition()].getId().getVideoId(),0f));
+
         holder.itemView.setOnClickListener(v -> {
             Intent i = new Intent(context, FullScreen.class);
-            i.putExtra("VideoId",items[position].getId().getVideoId()); //working...
+            i.putExtra("VideoId",videoId.getId().getVideoId()); //working...
             context.startActivity(i);
         });
 //        holder.VideoHolder.initialize(new AbstractYouTubePlayerListener() {
